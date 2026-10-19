@@ -1,24 +1,9 @@
 name: "Benchmark Gate — bounty-escrow CI gas / resource thresholds"
 
 on:
-  push:
-    branches: [master, main]
-  pull_request:
-    branches: [master, main]
+  workflow_dispatch:
   schedule:
     - cron: '0 4 * * *' # Nightly scheduled run defaults to strict
-  workflow_dispatch:
-    inputs:
-      gas_mode:
-        description: 'ESCROW_GAS_MODE (strict / warn / collect)'
-        required: false
-        default: 'strict'
-        type: choice
-        options:
-        - strict
-        - warn
-        - collect
-
 jobs:
   gate:
     name: bounty-escrow gas CI thresholds (strict / warn / collect)

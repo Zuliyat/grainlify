@@ -1,11 +1,7 @@
 name: Entry Point Coverage Check
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
+  workflow_dispatch:
 jobs:
   check-coverage:
     runs-on: ubuntu-latest

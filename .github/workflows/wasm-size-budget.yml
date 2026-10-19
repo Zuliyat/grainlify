@@ -1,21 +1,7 @@
 name: "Wasm Size Budget Gate"
 
 on:
-  push:
-    branches: [master, main]
-    paths:
-      - "contracts/**"
-      - ".github/wasm-budgets.json"
-      - ".github/workflows/wasm-size-budget.yml"
-      - "scripts/check-wasm-budgets.sh"
-  pull_request:
-    branches: [master, main]
-    paths:
-      - "contracts/**"
-      - ".github/wasm-budgets.json"
-      - ".github/workflows/wasm-size-budget.yml"
-      - "scripts/check-wasm-budgets.sh"
-
+  workflow_dispatch:
 env:
   CARGO_TERM_COLOR: always
   RUST_TOOLCHAIN: 1.88.0

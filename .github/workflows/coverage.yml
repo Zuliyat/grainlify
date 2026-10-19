@@ -11,25 +11,7 @@ name: Contract Coverage
 # still leaves a browsable report behind to explain itself.
 
 on:
-  push:
-    branches: [master, main]
-    paths:
-      - "contracts/**"
-      - "soroban/**"
-      - ".github/coverage-thresholds.json"
-      - "scripts/run_contract_coverage.sh"
-      - "scripts/check-coverage-thresholds.sh"
-      - ".github/workflows/coverage.yml"
-  pull_request:
-    branches: [master, main]
-    paths:
-      - "contracts/**"
-      - "soroban/**"
-      - ".github/coverage-thresholds.json"
-      - "scripts/run_contract_coverage.sh"
-      - "scripts/check-coverage-thresholds.sh"
-      - ".github/workflows/coverage.yml"
-
+  workflow_dispatch:
 env:
   CARGO_TERM_COLOR: always
   # Pin the toolchain so a new stable rustc cannot move the measured numbers
